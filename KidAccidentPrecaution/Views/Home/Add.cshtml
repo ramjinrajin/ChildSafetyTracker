@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+ 
+
+
+ 
+<link rel="stylesheet" type="text/css" href="~/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+<link href="~/Bootstrap/bootstrap-3.3.6-dist/css/bootstrap-timepicker.min.css" rel="stylesheet" />
+<script type="text/javascript" src="~/Script/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="~/Bootstrap/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+<script src="~/Bootstrap/bootstrap-3.3.6-dist/js/bootstrap-timepicker.min.js"></script>
+
+ 
+
+<script src="~/Scripts/sweetalert.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var Alert = '@ViewBag.Message';
+
+        if (Alert != 'NIL' && '@ViewBag.Status' == "Success") {
+
+
+            swal({
+                title: "congratulations!",
+                text: '@ViewBag.Message',
+                icon: "success",
+                button: "ok",
+            });
+        }
+
+        if (Alert != 'NIL' && '@ViewBag.Status' == "Warning") {
+
+
+            swal({
+                title: "Warning!",
+                text: '@ViewBag.Message',
+                icon: "warning",
+                button: "ok",
+            });
+        }
+
+        if (Alert != 'NIL' && '@ViewBag.Status' == "Error") {
+
+
+            swal({
+                title: "Error!",
+                text: '@ViewBag.Message',
+                icon: "error",
+                button: "ok",
+            });
+        }
+
+
+
+
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <h3>Add Band</h3>
+    <p>
+        You can add band setting here,Register the band with the identification token number
+    </p>
+    <p></p>
+    <form class="form-horizontal" method="post">
+        <div class="form-group form-group-sm">
+            <label class="col-sm-2 control-label" for="sm">Band No</label>
+            <div class="col-sm-4">
+                <input name="BandNo" class="form-control" type="number" id="sm">
+               
+
+            </div>
+        </div>
+        <div class="form-group form-group-sm">
+            <label class="col-sm-2 control-label" for="sm">Band SL.No</label>
+            <div class="col-sm-4">
+                <input name="BandSLNO" class="form-control" type="text" id="sm">
+               
+
+            </div>
+        </div>
+
+     
+
+
+
+        <div class="form-group form-group-sm">
+            <label class="col-sm-2 control-label" for="sm">Notification Type</label>
+            <div class="col-sm-4">
+                <select id="cs3" name="NotificationType" class="cs3 form-control input-small">
+                    <option value="Email">Email</option>
+                    <option value="SMS">SMS</option>
+
+                </select>
+            </div>
+        </div>
+
+
+
+        <div class="form-group form-group-sm">
+            <label class="col-sm-2 control-label" for="sm"></label>
+            <div class="col-sm-4">
+                <input name="Submit" type="submit" id="btn" class="btn btn-info" value="Add Band">
+            </div>
+        </div>
+    </form>
+</div>
+
+ 
+

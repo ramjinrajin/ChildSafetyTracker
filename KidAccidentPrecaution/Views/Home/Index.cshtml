@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+
+    Layout = "~/Views/Shared/layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-sm-4 col-md-4">
+        <div class="thumbnail">
+            @*<img src="~/images/unnamed.png" alt="...">*@
+            <div class="caption">
+                <h3>Drop sensor monitor Service 1</h3>
+                <h5>Notification Type : Email</h5>
+                <p>Validity : 1 hour</p>
+                <p>Band No:DFER001</p>
+
+                <p><a href="/GoogleMap/Index?BandId=1" class="btn btn-primary" role="button">Track my kid</a> <a href="#" class="btn btn-danger" role="button">Stop notifying</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <div class="caption">
+                <h3>Baby monitor Service 2</h3>
+                <h5>Notification Type : Email</h5>
+                <p>Validity : 1 hour</p>
+                <p>Band No:DFER001</p>
+
+                <p><a href="/GoogleMap/Index?BandId=2" class="btn btn-primary" role="button">Track my kid</a> <a href="#" class="btn btn-danger" role="button">Stop notifying</a></p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Single button -->
+    <div class="btn-group">
+        <a href="~/home/Add" class="btn  btn-success " role="button">Add Band</a>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
