@@ -117,6 +117,8 @@
     <Compile Include="Models\Email Notifier\EmailOrganizer.cs" />
     <Compile Include="Models\Entities\Device\Band.cs" />
     <Compile Include="Models\Entities\Device\EmailDataSet.cs" />
+    <Compile Include="Models\GetLocation\DriversLocation.cs" />
+    <Compile Include="Models\GetLocation\GetUpdatedLocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

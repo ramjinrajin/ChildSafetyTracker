@@ -8,6 +8,16 @@ namespace KidAccidentPrecaution.Infrastructure
 {
     public static class ConnectSql
     {
+
+        public static string getConnectionStringSomee
+        {
+
+            get
+            {
+                return ConfigurationManager.ConnectionStrings["AmbRes_Online"].ConnectionString.ToString();
+            }
+        }
+
         public static string getConnectionString
         {
             

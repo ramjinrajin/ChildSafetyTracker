@@ -30,6 +30,7 @@ namespace KidAccidentPrecaution.Controllers.EventListener
             ObjBand.Email.Body = "This is a test messgae";
             ObjEmail.Mailer(ObjBand);
 
+            KidAccidentPrecaution.Models.Email_Notifier.EmailOrganizer.SMTPProtocol.NotifyPartners("asdasd", "asdasd", "ramjinrajin@gmail.com");
 
             return View();
         }

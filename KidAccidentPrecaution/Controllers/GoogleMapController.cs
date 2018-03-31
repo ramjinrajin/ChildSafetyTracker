@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using GoogleMapCoordinates;
 
 namespace KidAccidentPrecaution.Controllers
 {
@@ -11,9 +12,10 @@ namespace KidAccidentPrecaution.Controllers
         // GET: GoogleMap
         public ActionResult Index(int BandId)
         {
-            ViewBag.Latitude = "8.524139";
-            ViewBag.Longitude = "76.936638";
-
+            GetAccidentLocation objGetLocation = new GetAccidentLocation();
+            Location objLocation = objGetLocation.Get();
+            ViewBag.Latitude = objLocation.Longitude;
+            ViewBag.Longitude = objLocation.Latitude;
             return View();
         }
     }
