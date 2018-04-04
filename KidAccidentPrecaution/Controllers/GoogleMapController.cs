@@ -9,7 +9,7 @@ namespace KidAccidentPrecaution.Controllers
 {
     public class GoogleMapController : Controller
     {
-        // GET: GoogleMap
+       [Authorize]
         public ActionResult Index(int BandId)
         {
             GetAccidentLocation objGetLocation = new GetAccidentLocation();

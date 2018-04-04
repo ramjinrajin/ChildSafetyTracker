@@ -5,12 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace KidAccidentPrecaution.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+       [Authorize]
         public ActionResult Index()
         {
             return View();
@@ -18,6 +19,7 @@ namespace KidAccidentPrecaution.Controllers
 
 
         [HttpGet]
+        [Authorize]
         public ActionResult Add()
         {
             ViewBag.Message = "NIL";
@@ -25,6 +27,7 @@ namespace KidAccidentPrecaution.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public ActionResult Add(FormCollection frm)
         {
 
@@ -58,5 +61,14 @@ namespace KidAccidentPrecaution.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public ActionResult logout()
+        {
+            Session.Clear();
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Login");
+        }
+
     }
 }

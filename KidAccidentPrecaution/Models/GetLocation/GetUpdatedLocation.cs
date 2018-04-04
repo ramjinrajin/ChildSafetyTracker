@@ -31,7 +31,7 @@ namespace GoogleMapCoordinates
                     {
                         con.Open();
                         //currently we are taking top 1 but later we will take particular driver location accidents only
-                        SqlCommand cmd = new SqlCommand("select TOP 1 Location,Accident,Longitude,Latitude from Accident WHERE IsExpired=0 order by 1 desc", con);
+                        SqlCommand cmd = new SqlCommand("select TOP 1  Location,Accident,Longitude,Latitude from Accident    order by Accident desc", con);
                         SqlDataReader rdr = cmd.ExecuteReader();
                         if (rdr.HasRows)
                         {

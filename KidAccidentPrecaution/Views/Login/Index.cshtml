@@ -50,7 +50,9 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        @*<form id="login-form" action="~/home/login" method="post" role="form" style="display: block;">*@
+                        @*<form id="login-form" method="post" role="form" style="display: block;">*@
+                        @using (Html.BeginForm("Index","Login" ,new { returnUrl = Request.QueryString["ReturnUrl"] }, FormMethod.Post, new { id = "login-form" }))
+                        {
                             <div class="form-group">
                                 <input type="text" name="User name" id="User name" tabindex="1" class="form-control" placeholder="Username" value="">
                             </div>
@@ -64,7 +66,7 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-sm-6 col-sm-offset-3">
-                                        <input type="button" name="login-submit" formmethod="post" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                        <input type="submit" name="login-submit" formmethod="post" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
                                     </div>
                                 </div>
                             </div>
@@ -72,13 +74,15 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="text-center">
-                                            <a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                            @*<a href="#" tabindex="5" class="forgot-password">Forgot Password?</a>*@
+                                            @*<a href="#" data-target="#pwdModal" data-toggle="modal" class="">Forgot my password ?</a>*@
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        }
                         @*</form>*@
-                        <form id="register-form" action="~/home/RegisterUSer" method="post" role="form" style="display: none;">
+                        <form id="register-form" action="~/Login/Register" method="post" role="form" style="display: none;">
                             <div class="form-group">
                                 <input type="text" name="username" id="username" tabindex="1" class="form-control" required="required" placeholder="Username" value="">
                             </div>
@@ -107,22 +111,79 @@
     </div>
 </div>
 
+<!--modal-->
+<div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h1 class="text-center">Reset Password</h1>
 
-<link href="~/Style/loginpage.css" rel="stylesheet" />
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center">
+                                <p class="">
+                                </p><div>
+                                    <span style="line-height: 1.42857;">Lost your password?</span>
+                                    <br>
+                                </div>
+                                <div>
+                                    <br>
+                                </div>
+                                <div>
+                                    Type in your username and hit that Request Password Reset button, an email
+                                    will be sent to the email you provided us when you signed up.
+                                </div>
+                                <div>
+                                    <br>
+                                </div>
+                                <div>
+                                    If you do not receive an email within an hour of you requesting a password
+                                    reset, please contact support.
+                                </div>
+                                <div>
+                                    <br>
+                                </div>
+                                <div>Have a nice day!</div>
+                                <div>
+                                    <br>
+                                </div>
+                                <div>*Your Username is usually your Minecraft username.*</div>
+                                <p></p>
+                                <div class="panel-body">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <input class="form-control input-lg" placeholder="Username" name="usermame" type="email">
+                                        </div>
+                                        <input class="btn btn-lg btn-primary btn-block" value="Request Password Reset" type="submit">
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-12">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<script src="~/Script/jquery-3.0.0.js"></script>
+<link href="~/assets/css/loginpage.css" rel="stylesheet" />
+<script src="~/assets/js/jquery-3.0.0.js"></script>
+<script src="~/assets/js/loginSwitcher.js"></script>
 
-<script src="~/Script/loginSwitcher.js"></script>
 
 <script>
     $(document).ready(function () {
 
-        $('#login-submit').click(function () {
-            var url = "/Home/index";
-            $(location).attr('href',url);
-  
-        });
-        
+
         var val = '@Html.Raw((string)TempData["AlertMessage"])';
 
         if (val == "Sucess") {
@@ -136,8 +197,7 @@
                     $("#Exists").delay(2000).fadeOut(500);
                 }
             }
-            else if (val == "Invalid")
-            {
+            else if (val == "Invalid") {
                 $("#Invalid").fadeIn(300);
                 $("#Invalid").delay(2000).fadeOut(500);
             }
@@ -173,4 +233,3 @@
 
     });
 </script>
-
