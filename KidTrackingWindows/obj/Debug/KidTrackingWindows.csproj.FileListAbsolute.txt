@@ -1,0 +1,9 @@
+C:\Users\RamjinM\Desktop\Kid\ChildSafetyTracker\KidTrackingWindows\bin\Debug\KidTrackingWindows.exe.config
+C:\Users\RamjinM\Desktop\Kid\ChildSafetyTracker\KidTrackingWindows\bin\Debug\KidTrackingWindows.exe
+C:\Users\RamjinM\Desktop\Kid\ChildSafetyTracker\KidTrackingWindows\bin\Debug\KidTrackingWindows.pdb
+C:\Users\RamjinM\Desktop\Kid\ChildSafetyTracker\KidTrackingWindows\obj\Debug\KidTrackingWindows.csprojResolveAssemblyReference.cache
+C:\Users\RamjinM\Desktop\Kid\ChildSafetyTracker\KidTrackingWindows\obj\Debug\KidTrackingWindows.Properties.Resources.resources
+C:\Users\RamjinM\Desktop\Kid\ChildSafetyTracker\KidTrackingWindows\obj\Debug\KidTrackingWindows.csproj.GenerateResource.Cache
+C:\Users\RamjinM\Desktop\Kid\ChildSafetyTracker\KidTrackingWindows\obj\Debug\KidTrackingWindows.exe
+C:\Users\RamjinM\Desktop\Kid\ChildSafetyTracker\KidTrackingWindows\obj\Debug\KidTrackingWindows.pdb
+C:\Users\RamjinM\Desktop\Kid\ChildSafetyTracker\KidTrackingWindows\obj\Debug\KidTrackingWindows.KidTracker.resources

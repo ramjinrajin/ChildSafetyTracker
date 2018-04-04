@@ -1,0 +1,3 @@
+﻿DELETE from inz_users
+
+EXEC [spAuthenticateUser] 'Ramjin ','D033E22AE348AEB5660FC2140AEC35850C4DA997'
